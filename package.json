@@ -1,0 +1,29 @@
+{
+  "name": "project2.0",
+  "version": "1.0.0",
+  "description": "Webpack and Babel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jul1us5/Project2.0.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "webpack",
+    "babel"
+  ],
+  "author": "Julius <info.jul1u5.lt>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jul1us5/Project2.0/issues"
+  },
+  "homepage": "https://github.com/Jul1us5/Project2.0#readme",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
