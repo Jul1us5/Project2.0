@@ -81,32 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./analytics.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/data.js":
-/*!*********************!*\
-  !*** ./src/data.js ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst data = {\n    title: 'My first work with Webpack!'\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (data);\n\n//# sourceURL=webpack:///./src/data.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
+/***/ "./analytics.js":
 /*!**********************!*\
-  !*** ./src/index.js ***!
+  !*** ./analytics.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data.js */ \"./src/data.js\");\n\n\nconst h1 = document.querySelector('h1');\nh1.innerHTML = _data_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].title;\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("function createAnalytics() {\n    let counter = 0;\n    let isDestroyed = false;\n\n    const listener = () => counter++;\n\n    document.addEventListener('click', listener);\n\n    return {\n        destroy() {\n            document.removeEventListener('click', listener);\n            isDestroyed = true;\n        },\n        getClick() {\n            if(isDestroyed) {\n                return 'Analytics is Destroyed!';\n            }\n            return counter;\n        }\n    }\n}\n\nwindow.analytics = createAnalytics();\n\n//# sourceURL=webpack:///./analytics.js?");
 
 /***/ })
 
