@@ -2,9 +2,11 @@
   "name": "project2.0",
   "version": "1.0.0",
   "description": "Webpack and Babel",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,14 @@
   "homepage": "https://github.com/Jul1us5/Project2.0#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
