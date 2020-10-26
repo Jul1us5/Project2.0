@@ -1,7 +1,39 @@
+const path = require('path')
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+
+//  Adding multi HTML files 
+const HtmlPages = ['example']
+const MultiHtmlPlugins = HtmlPages.map( name => {
+    return new HtmlWebpackPlugin({
+        template: `./src/${name}.html`,
+        filename: `${name}.html`,
+        chunks: [`${name}`]
+      })
+})
 
 
 
-// ......
+module.exports = {
+    mode: 'development',
+    entry: {
+        main: './src/JS/index.js',     //   MAIN name
+        analytics: './src/JS/analytics.js' //   ANALYTICS name
+    },
+    output: {
+        filename: 'JS/[name].[contenthash].js', //  Here use [name] from entry
+        path: path.resolve(__dirname, 'public') 
+    },
+    plugins: [
+        new HtmlWebpackPlugin({   
+            template: './src/index.html',
+            chunks: ['main']
+        }),
+        new CleanWebpackPlugin() //     Clean old files
+    ].concat(MultiHtmlPlugins) //   Here u set ALL HTML files as amended
+}
 
 
 
