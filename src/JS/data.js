@@ -1,5 +1,5 @@
 const data = {
-    title: 'My first work with Webpack!!'
+    title: 'WEBPACK BUNDLE.'
 }
 
 export default data;
