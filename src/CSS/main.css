@@ -1,3 +1,40 @@
 body {
-    background-color: rgb(138, 226, 203);
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+}
+section {
+    display: grid;
+    justify-content: center;
+    width: 500px;
+    height: 250px;
+    margin-left: calc(50% - 250px);
+    margin-top: calc(50vh - 125px);
+    padding-top: 40px;
+    border: 1px dashed rgb(255, 255, 255);
+}
+.main {
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    font-size: bold;
+    height: 50px;
+    width: 450px;
+    text-align: center;
+    border-bottom: 1px dashed rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 560px) {
+    body {
+        overflow: hidden;
+    }
+    section {
+        width: 95%;
+        margin: 0;
+        margin-left: 2.5%;
+        margin-top: 40%;
+    }
+    .main {
+        width: 100%;
+        font-size: 25px;
+    }
 }

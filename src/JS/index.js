@@ -1,7 +1,4 @@
-import data from './data'
-import '../CSS/main.css'
+// Here connect all Javascript files
+import main from './main'
 
-console.log(data);
-console.log('------');
-console.log('index');
-console.log('------');
+
