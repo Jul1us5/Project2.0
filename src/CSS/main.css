@@ -22,6 +22,11 @@ section {
     text-align: center;
     border-bottom: 1px dashed rgb(255, 255, 255);
 }
+img {
+    width: 100px;
+    height: 100px;
+    margin-left: calc(50% - 50px);
+}
 
 @media screen and (max-width: 560px) {
     body {

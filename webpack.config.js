@@ -36,7 +36,17 @@ module.exports = {
             {
                 test: /\.css$/,
                 use : ['style-loader', 'css-loader'] //     css-loader reader file | style-loader put in head | npm install
-            }                                        //     From right to left | CSS import in index.js file   
+            },                                       //     From right to left | CSS import in index.js file 
+            {
+                                test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
+                                use: [{
+                                    loader: 'file-loader',
+                                    options: {
+                                      name: '[name].[ext]',
+                                      outputPath: 'IMG/'
+                                    }
+                                  }]
+                            },
         ]
     }
 }
