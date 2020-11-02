@@ -2,6 +2,7 @@ const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
 //  Adding multi HTML files 
@@ -40,7 +41,15 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin(),
-        new CleanWebpackPlugin() //     Clean old files
+        new CleanWebpackPlugin(), //     Clean old files
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/IMG/FAV/box.png'),
+                    to: path.resolve(__dirname, 'public/IMG/FAV')  // CopyWebpackPlugin copy FOLDERS or FILES to dir
+                }
+            ]
+        }),
     ].concat(MultiHtmlPlugins), //   Here set ALL HTML files as amended
     module: {
         rules: [
@@ -53,8 +62,8 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]',
-                        outputPath: 'IMG/'
+                        name: '[name].[ext]', // If delete use img like hash
+                        outputPath: '/IMG'
                     }
                 }]
             },
