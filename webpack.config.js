@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 
 //  Adding multi HTML files 
-const HtmlPages = ['index', 'example']
+const HtmlPages = ['index']
 const MultiHtmlPlugins = HtmlPages.map( name => {
     return new HtmlWebpackPlugin({
         template: `./${name}.html`,
@@ -38,15 +38,25 @@ module.exports = {
                 use : ['style-loader', 'css-loader'] //     css-loader reader file | style-loader put in head | npm install
             },                                       //     From right to left | CSS import in index.js file 
             {
-                                test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
-                                use: [{
-                                    loader: 'file-loader',
-                                    options: {
-                                      name: '[name].[ext]',
-                                      outputPath: 'IMG/'
-                                    }
-                                  }]
-                            },
+                test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'IMG/'
+                    }
+                }]
+            },
+            {
+                test: /\.(ttf|woff|woff2|eot)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'FONTS/'
+                    }
+                }]
+            }
         ]
     }
 }

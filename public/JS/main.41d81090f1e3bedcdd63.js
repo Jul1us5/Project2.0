@@ -10,6 +10,20 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "../node_modules/css-loader/dist/cjs.js!./CSS/fonts.css":
+/*!**************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js!./CSS/fonts.css ***!
+  \**************************************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, module.id, __webpack_require__.d, __webpack_require__.*, module */
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ \"../node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _FONTS_Roboto_Roboto_Regular_ttf__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FONTS/Roboto/Roboto-Regular.ttf */ \"./FONTS/Roboto/Roboto-Regular.ttf\");\n// Imports\n\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_FONTS_Roboto_Roboto_Regular_ttf__WEBPACK_IMPORTED_MODULE_2__.default);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"@font-face {\\n    font-family: 'Roboto';\\n    src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \") format('truetype');\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./CSS/fonts.css?../node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "../node_modules/css-loader/dist/cjs.js!./CSS/main.css":
 /*!*************************************************************!*\
   !*** ../node_modules/css-loader/dist/cjs.js!./CSS/main.css ***!
@@ -20,7 +34,7 @@
 /*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, module.id, __webpack_require__.d, __webpack_require__.*, module */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\n    background-color: rgb(0, 0, 0);\\n    margin: 0;\\n    padding: 0;\\n}\\nsection {\\n    display: grid;\\n    justify-content: center;\\n    width: 500px;\\n    height: 250px;\\n    margin-left: calc(50% - 250px);\\n    margin-top: calc(50vh - 125px);\\n    padding-top: 40px;\\n    border: 1px dashed rgb(255, 255, 255);\\n}\\n.main {\\n    font-size: 35px;\\n    color: rgb(255, 255, 255);\\n    font-size: bold;\\n    height: 50px;\\n    width: 450px;\\n    text-align: center;\\n    border-bottom: 1px dashed rgb(255, 255, 255);\\n}\\nimg {\\n    width: 100px;\\n    height: 100px;\\n    margin-left: calc(50% - 50px);\\n}\\n\\n@media screen and (max-width: 560px) {\\n    body {\\n        overflow: hidden;\\n    }\\n    section {\\n        width: 95%;\\n        margin: 0;\\n        margin-left: 2.5%;\\n        margin-top: 40%;\\n    }\\n    .main {\\n        width: 100%;\\n        font-size: 25px;\\n    }\\n    /* img {\\n        width: 100px;\\n        height: 100px;\\n        margin-left: calc(50% - 50px);\\n    } */\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./CSS/main.css?../node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_fonts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./fonts.css */ \"../node_modules/css-loader/dist/cjs.js!./CSS/fonts.css\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ \"../node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _IMG_webpack_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../IMG/webpack.png */ \"./IMG/webpack.png\");\n// Imports\n\n\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_fonts_css__WEBPACK_IMPORTED_MODULE_1__.default);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_IMG_webpack_png__WEBPACK_IMPORTED_MODULE_3__.default);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\n    background-color: rgb(0, 0, 0);\\n    margin: 0;\\n    padding: 0;\\n    font-family: 'Roboto', sans-serif;\\n}\\nsection {\\n    display: grid;\\n    justify-content: center;\\n    width: 500px;\\n    height: 250px;\\n    margin-left: calc(50% - 250px);\\n    margin-top: calc(50vh - 125px);\\n    padding-top: 40px;\\n    border: 1px dashed rgb(255, 255, 255);\\n}\\n.main {\\n    font-size: 35px;\\n    color: rgb(255, 255, 255);\\n    font-size: bold;\\n    height: 50px;\\n    width: 450px;\\n    text-align: center;\\n    border-bottom: 1px dashed rgb(255, 255, 255);\\n}\\n.img {\\n    width: 100px;\\n    height: 100px;\\n    border: 1px solid wheat;\\n    margin-left: calc(50% - 50px);\\n    background: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\n    background-size: cover;\\n}\\n\\n@media screen and (max-width: 560px) {\\n    body {\\n        overflow: hidden;\\n    }\\n    section {\\n        width: 95%;\\n        margin: 0;\\n        margin-left: 2.5%;\\n        margin-top: 40%;\\n    }\\n    .main {\\n        width: 100%;\\n        font-size: 25px;\\n    }\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./CSS/main.css?../node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -37,6 +51,19 @@ eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n
 
 /***/ }),
 
+/***/ "../node_modules/css-loader/dist/runtime/getUrl.js":
+/*!*********************************************************!*\
+  !*** ../node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \*********************************************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 3:0-14 */
+/***/ ((module) => {
+
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = url && url.__esModule ? url.default : url;\n\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  }\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n'), \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack:///../node_modules/css-loader/dist/runtime/getUrl.js?");
+
+/***/ }),
+
 /***/ "./IMG/webpack.png":
 /*!*************************!*\
   !*** ./IMG/webpack.png ***!
@@ -48,6 +75,20 @@ eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"IMG/webpack.png\");\n\n//# sourceURL=webpack:///./IMG/webpack.png?");
+
+/***/ }),
+
+/***/ "./FONTS/Roboto/Roboto-Regular.ttf":
+/*!*****************************************!*\
+  !*** ./FONTS/Roboto/Roboto-Regular.ttf ***!
+  \*****************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.p, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"FONTS/Roboto-Regular.ttf\");\n\n//# sourceURL=webpack:///./FONTS/Roboto/Roboto-Regular.ttf?");
 
 /***/ }),
 
@@ -114,7 +155,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mai
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ \"./JS/data.js\");\n/* harmony import */ var _CSS_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CSS/main.css */ \"./CSS/main.css\");\n/* harmony import */ var _IMG_webpack_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../IMG/webpack.png */ \"./IMG/webpack.png\");\n\n\n\n\nconst main = document.querySelector('.main')\nmain.insertAdjacentHTML('afterbegin', _data__WEBPACK_IMPORTED_MODULE_0__.default.title);\n\n//# sourceURL=webpack:///./JS/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ \"./JS/data.js\");\n/* harmony import */ var _CSS_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CSS/main.css */ \"./CSS/main.css\");\n/* harmony import */ var _JSON_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../JSON/json */ \"./JSON/json.json\");\n\n\n\n// import webpack from '../IMG/webpack.png'\n\nconst main = document.querySelector('.main')\nmain.insertAdjacentHTML('afterbegin', _data__WEBPACK_IMPORTED_MODULE_0__.default.title);\n\nconsole.log(_JSON_json__WEBPACK_IMPORTED_MODULE_2__.title);\n\n//# sourceURL=webpack:///./JS/main.js?");
+
+/***/ }),
+
+/***/ "./JSON/json.json":
+/*!************************!*\
+  !*** ./JSON/json.json ***!
+  \************************/
+/*! default exports */
+/*! export title [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: module */
+/***/ ((module) => {
+
+eval("module.exports = {\"title\":\"JSON\"};\n\n//# sourceURL=webpack:///./JSON/json.json?");
 
 /***/ })
 
