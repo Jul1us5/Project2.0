@@ -1,7 +1,12 @@
+@import 'fonts.css';
+@import '~normalize.css';
+
+
 body {
     background-color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 section {
     display: grid;
@@ -21,6 +26,14 @@ section {
     width: 450px;
     text-align: center;
     border-bottom: 1px dashed rgb(255, 255, 255);
+}
+.img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid wheat;
+    margin-left: calc(50% - 50px);
+    background: url('../IMG/webpack.png');
+    background-size: cover;
 }
 
 @media screen and (max-width: 560px) {
