@@ -169,7 +169,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mai
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ \"./JS/data.js\");\n/* harmony import */ var _CSS_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CSS/main.css */ \"./CSS/main.css\");\n/* harmony import */ var _JSON_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../JSON/json */ \"./JSON/json.json\");\n\n\n\n// import webpack from '../IMG/webpack.png'\n\nconst main = document.querySelector('.main')\nmain.insertAdjacentHTML('afterbegin', _data__WEBPACK_IMPORTED_MODULE_0__.default.title);\n\nconsole.log(_JSON_json__WEBPACK_IMPORTED_MODULE_2__.title);\n\n//# sourceURL=webpack:///./JS/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ \"./JS/data.js\");\n/* harmony import */ var _CSS_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CSS/main.css */ \"./CSS/main.css\");\n/* harmony import */ var _JSON_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../JSON/json */ \"./JSON/json.json\");\n\n\n\n\nconst main = document.querySelector('.main')\nmain.insertAdjacentHTML('afterbegin', _data__WEBPACK_IMPORTED_MODULE_0__.default.title);\n\nconsole.log(_JSON_json__WEBPACK_IMPORTED_MODULE_2__.title);\n\n//# sourceURL=webpack:///./JS/main.js?");
 
 /***/ }),
 
