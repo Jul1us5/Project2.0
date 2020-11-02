@@ -1,4 +1,4 @@
-import data from './data'
+import data from '@/data'
 import '../CSS/main.css'
 import json from '../JSON/json'
 

@@ -27,6 +27,17 @@ module.exports = {
         filename: 'JS/[name].[contenthash].js', //  Here use [name] from entry
         path: path.resolve(__dirname, 'public') 
     },
+    resolve: {
+        extensions: ['.js', '.json', '.png', '.svg'], // Can write file names without .ending
+        alias: {
+            '@': path.resolve(__dirname, 'src/JS') // Directory in main.js
+        }
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all' // Push all in one and use from vendor..
+        }
+    },
     plugins: [
         new HtmlWebpackPlugin(),
         new CleanWebpackPlugin() //     Clean old files
