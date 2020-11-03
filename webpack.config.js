@@ -3,6 +3,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 
 //  Adding multi HTML files 
@@ -10,6 +11,7 @@ const HtmlPages = ['index']
 const MultiHtmlPlugins = HtmlPages.map( name => {
     return new HtmlWebpackPlugin({
         template: `./${name}.html`,
+        filename: '[name].[contenthash].css',
         filename: `${name}.html`,
       })
 })
@@ -46,10 +48,11 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, 'src/IMG/FAV/box.png'),
-                    to: path.resolve(__dirname, 'public/IMG/FAV')  // CopyWebpackPlugin copy FOLDERS or FILES to dir
+                    to: path.resolve(__dirname, 'public/IMG/FAV')  // CopyWebpackPlugin copy FOLDERS or FILES to ...
                 }
             ]
         }),
+        new MiniCssExtractPlugin()
     ].concat(MultiHtmlPlugins), //   Here set ALL HTML files as amended
     module: {
         rules: [
@@ -62,7 +65,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]', // If delete use img like hash
+                        name: '[name].[ext]', // If delete use img name like hash
                         outputPath: '/IMG'
                     }
                 }]
