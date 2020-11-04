@@ -11,7 +11,6 @@ const HtmlPages = ['index']
 const MultiHtmlPlugins = HtmlPages.map( name => {
     return new HtmlWebpackPlugin({
         template: `./${name}.html`,
-        filename: '[name].[contenthash].css',
         filename: `${name}.html`,
       })
 })
@@ -48,24 +47,32 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, 'src/IMG/FAV/box.png'),
-                    to: path.resolve(__dirname, 'public/IMG/FAV')  // CopyWebpackPlugin copy FOLDERS or FILES to ...
+                    to: path.resolve(__dirname, 'public/IMG/FAV')  // CopyWebpackPlugin copy FOLDERS or FILES to dir
                 }
             ]
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin({
+            filename: 'CSS/[name].[contenthash].css', // Where files deploy !!!!!!
+        })
     ].concat(MultiHtmlPlugins), //   Here set ALL HTML files as amended
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use : ['style-loader', 'css-loader'] //     css-loader reader file | style-loader put in head | npm install
-            },                                       //     From right to left | CSS import in index.js file 
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../' // ADD -> for in .css links
+                        },
+                    }, 'css-loader'],
+            },
             {
                 test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]', // If delete use img name like hash
+                        name: '[name].[ext]', // If delete use img like hash
                         outputPath: '/IMG'
                     }
                 }]
