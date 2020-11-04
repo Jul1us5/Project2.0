@@ -65,27 +65,32 @@ module.exports = {
                         options: {
                             publicPath: '../' // ADD -> for in .css links
                         },
-                    }, 'css-loader'],
+                    }, 'css-loader'
+                ],
             },
             {
                 test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]', // If delete use img like hash
-                        outputPath: '/IMG'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]', // If delete use img like hash
+                            outputPath: '/IMG'
+                        }
                     }
-                }]
+                ]
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'FONTS/'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'FONTS/'
+                        }
                     }
-                }]
+                ]
             }
         ]
     }
