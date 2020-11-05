@@ -1,0 +1,1 @@
+(()=>{"use strict";const e={title:"WEBPACK BUNDLE."};document.querySelector(".main").insertAdjacentHTML("afterbegin",e.title),console.log("JSON")})();
