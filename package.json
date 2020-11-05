@@ -4,15 +4,16 @@
   "description": "webpack bundle 2.0",
   "private": "true",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch"
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.2.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",

@@ -6,6 +6,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
+
+
+
+
 //  Adding multi HTML files 
 const HtmlPages = ['index']
 const MultiHtmlPlugins = HtmlPages.map( name => {
@@ -63,29 +69,36 @@ module.exports = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
+                            hmr: isDev, // Hot Module Replacement
+                            reloadAll: true,
                             publicPath: '../' // ADD -> for in .css links
                         },
-                    }, 'css-loader'],
+                    }, 'css-loader'
+                ],
             },
             {
                 test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]', // If delete use img like hash
-                        outputPath: '/IMG'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]', // If delete use img like hash
+                            outputPath: '/IMG'
+                        }
                     }
-                }]
+                ]
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'FONTS/'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'FONTS/'
+                        }
                     }
-                }]
+                ]
             }
         ]
     }
