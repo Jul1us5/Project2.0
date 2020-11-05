@@ -6,6 +6,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
+
+
+
+
 //  Adding multi HTML files 
 const HtmlPages = ['index']
 const MultiHtmlPlugins = HtmlPages.map( name => {
@@ -63,6 +69,8 @@ module.exports = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
+                            hmr: isDev, // Hot Module Replacement
+                            reloadAll: true,
                             publicPath: '../' // ADD -> for in .css links
                         },
                     }, 'css-loader'
