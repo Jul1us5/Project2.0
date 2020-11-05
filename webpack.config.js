@@ -4,11 +4,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
+const optimization = () => {
+    const config = {
+        splitChunks: {
+            chunks: 'all'
+        }
+    }
+    if(isProd) {
+        config.minimizer = [
+            new OptimizeCssAssetPlugin(),
+            new TerserWebpackPlugin()
+        ]
+    }
+
+    return config
+}
 
 
 
@@ -18,6 +35,9 @@ const MultiHtmlPlugins = HtmlPages.map( name => {
     return new HtmlWebpackPlugin({
         template: `./${name}.html`,
         filename: `${name}.html`,
+        minify: {
+            collapseWhitespace: isProd // Minify .html files
+        }
       })
 })
 
@@ -41,11 +61,7 @@ module.exports = {
             '@': path.resolve(__dirname, 'src/JS') // Directory in main.js
         }
     },
-    optimization: {
-        splitChunks: {
-            chunks: 'all' // Push all in one and use from vendor..
-        }
-    },
+    optimization: optimization(),
     plugins: [
         new HtmlWebpackPlugin(),
         new CleanWebpackPlugin(), //     Clean old files
