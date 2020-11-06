@@ -11,6 +11,8 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
+const filename = (dir,ext) => isDev ? `${dir}/[name].${ext}` : `${dir}/[name].[contenthash].${ext}` 
+
 const optimization = () => {
     const config = {
         splitChunks: {
@@ -52,7 +54,7 @@ module.exports = {
         analytics: './JS/analytics.js' //   ANALYTICS [name]
     },
     output: {
-        filename: 'JS/[name].[contenthash].js', //  Here use [name] from entry
+        filename: filename('JS', 'js'), //  Here use [name] from entry
         path: path.resolve(__dirname, 'public') 
     },
     resolve: {
@@ -74,7 +76,7 @@ module.exports = {
             ]
         }),
         new MiniCssExtractPlugin({
-            filename: 'CSS/[name].[contenthash].css', // Where files deploy !!!!!!
+            filename: filename('CSS', 'css'), // Where files deploy !!!!!!
         })
     ].concat(MultiHtmlPlugins), //   Here set ALL HTML files as amended
     module: {
@@ -100,7 +102,6 @@ module.exports = {
                         options: {
                             hmr: isDev, // Hot Module Replacement
                             reloadAll: true,
-                            // publicPath: '../' // ADD -> for in .css links
                         },
                     },
                     'css-loader',
