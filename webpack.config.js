@@ -93,6 +93,21 @@ module.exports = {
                 ],
             },
             {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: isDev, // Hot Module Replacement
+                            reloadAll: true,
+                            // publicPath: '../' // ADD -> for in .css links
+                        },
+                    },
+                    'css-loader',
+                    'sass-loader'
+                ],
+            },
+            {
                 test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
                 use: [
                     {
