@@ -1,5 +1,9 @@
-@import 'fonts.css';
 @import '~normalize.css';
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../FONTS/Roboto/Roboto-Regular.ttf') format('truetype');
+}
 
 body {
     background-color: rgb(0, 0, 0);

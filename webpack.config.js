@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -77,16 +78,55 @@ const MultiHtmlPlugins = HtmlPages.map( name => {
         }
       })
 })
+// -----------------------------------
+const babelOptions = preset => {
+    const options = {
+        presets: [
+            '@babel/preset-env'
+        ], // Presets HERE | Plugins set ( Bundle ) for JS
+        plugins: [
+            '@babel/plugin-proposal-class-properties' // This plugin know about all features
+        ]
+    }
+    if(preset) {
+        options.presets.push(preset)
+    }
 
+    return options
+}
+// -----------------------------------
+const allPlugins = () => {
+    const base = [
+        new HtmlWebpackPlugin({ template: './index.html' }),
+        new CleanWebpackPlugin({
+            cleanStaleWebpackAssets: false, // Apparently files not referenced explicitly are treated as stale and removed
+        }), //     Clean old files
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/IMG/FAV/box.png'),
+                    to: path.resolve(__dirname, 'public/IMG/FAV')  // CopyWebpackPlugin copy FOLDERS or FILES to dir
+                }
+            ]
+        }),
+        new MiniCssExtractPlugin({
+            filename: filename('CSS', 'css'), // Where files deploy !!!!!!
+        })
+    ].concat(MultiHtmlPlugins)
+    if(isProd) {
+        base.push(new BundleAnalyzerPlugin())
+    }
 
-
+    return base
+}
+// -----------------------------------
 
 module.exports = {
     context: path.resolve(__dirname, 'src'), //     Location where we work
     mode: 'development',
     entry: {
         main: ['@babel/polyfill', './JS/index.js'],     //   MAIN [name]
-        analytics: './JS/analytics.ts' //   ANALYTICS [name]
+        analytics: './JS/analytics.js' //   ANALYTICS [name]
     },
     output: {
         filename: filename('JS', 'js'), //  Here use [name] from entry
@@ -99,21 +139,8 @@ module.exports = {
         }
     },
     optimization: optimization(),
-    plugins: [
-        new HtmlWebpackPlugin(),
-        new CleanWebpackPlugin(), //     Clean old files
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'src/IMG/FAV/box.png'),
-                    to: path.resolve(__dirname, 'public/IMG/FAV')  // CopyWebpackPlugin copy FOLDERS or FILES to dir
-                }
-            ]
-        }),
-        new MiniCssExtractPlugin({
-            filename: filename('CSS', 'css'), // Where files deploy !!!!!!
-        })
-    ].concat(MultiHtmlPlugins), //   Here set ALL HTML files as amended
+    // devtool: isDev ? 'source-map' : '',
+    plugins: allPlugins(), //   Here set ALL HTML files as amended,
     module: {
         rules: [
             {
@@ -137,12 +164,7 @@ module.exports = {
                 exclude: /node_modules/, // Dont include this
                 use: {
                   loader: "babel-loader",
-                  options: {
-                    presets: ['@babel/preset-env'], // Presets HERE | Plugins set ( Bundle ) for JS
-                    plugins: [
-                        '@babel/plugin-proposal-class-properties' // This plugin know about all features
-                    ]
-                  },
+                  options: babelOptions()
                 }
             },
             {
@@ -150,15 +172,15 @@ module.exports = {
                 exclude: /node_modules/, // Dont include this
                 use: {
                   loader: "babel-loader",
-                  options: {
-                    presets: [
-                        '@babel/preset-env',
-                        '@babel/preset-typescript'
-                    ], // Presets HERE | Plugins set ( Bundle ) for JS
-                    plugins: [
-                        '@babel/plugin-proposal-class-properties' // This plugin know about all features
-                    ]
-                  },
+                  options: babelOptions('@babel/preset-typescript')
+                }
+            },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/, // Dont include this
+                use: {
+                  loader: "babel-loader",
+                  options: babelOptions('@babel/preset-react')
                 }
             }
         ]
