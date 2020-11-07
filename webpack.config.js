@@ -86,7 +86,7 @@ module.exports = {
     mode: 'development',
     entry: {
         main: ['@babel/polyfill', './JS/index.js'],     //   MAIN [name]
-        analytics: './JS/analytics.js' //   ANALYTICS [name]
+        analytics: './JS/analytics.ts' //   ANALYTICS [name]
     },
     output: {
         filename: filename('JS', 'js'), //  Here use [name] from entry
@@ -133,7 +133,7 @@ module.exports = {
                 use: fileLoaders('FONTS')
             },
             {
-                test: /\.m?js$/,
+                test: /\.js$/,
                 exclude: /node_modules/, // Dont include this
                 use: {
                   loader: "babel-loader",
@@ -144,7 +144,23 @@ module.exports = {
                     ]
                   },
                 }
-              }
+            },
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/, // Dont include this
+                use: {
+                  loader: "babel-loader",
+                  options: {
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-typescript'
+                    ], // Presets HERE | Plugins set ( Bundle ) for JS
+                    plugins: [
+                        '@babel/plugin-proposal-class-properties' // This plugin know about all features
+                    ]
+                  },
+                }
+            }
         ]
     }
 }
