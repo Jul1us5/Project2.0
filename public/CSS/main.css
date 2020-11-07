@@ -382,7 +382,7 @@ section {
     height: 100px;
     /* border: 1px solid wheat; */
     margin-left: calc(50% - 50px);
-    background: url(..//IMG/webpack.png);
+    background: url(../IMG/webpack.png);
     background-size: cover;
 }
 
@@ -407,5 +407,5 @@ section {
     }
 }
 body {
-  background-color: black;
+  background-color: #f57373;
 }
