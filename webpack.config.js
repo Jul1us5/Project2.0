@@ -13,6 +13,7 @@ const isProd = !isDev
 
 const filename = (dir,ext) => isDev ? `${dir}/[name].${ext}` : `${dir}/[name].[contenthash].${ext}` 
 
+// -----------------------------------
 const optimization = () => {
     const config = {
         splitChunks: {
@@ -28,7 +29,41 @@ const optimization = () => {
 
     return config
 }
+// -----------------------------------
+const cssLoaders = extra => {
+    const loaders = [
+        {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+                hmr: isDev, // Hot Module Replacement
+                reloadAll: true,
+                publicPath: '../' // ADD -> for in .css links
+            },
+        },
+        'css-loader'
+    ]
 
+    if(extra) {
+        loaders.push(extra)
+    }
+
+    return loaders
+}
+// -----------------------------------
+const fileLoaders = (dir) => {
+    const fileLoad = [
+        {
+            loader: `file-loader`,
+            options: {
+                name: '[name].[ext]',  // If delete use img like hash
+                outputPath: `${dir}/`
+            }
+        }
+    ]
+
+    return fileLoad
+}
+// -----------------------------------
 
 
 //  Adding multi HTML files 
@@ -83,54 +118,19 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: isDev, // Hot Module Replacement
-                            reloadAll: true,
-                            publicPath: '../' // ADD -> for in .css links
-                        },
-                    }, 'css-loader'
-                ],
+                use: cssLoaders()
             },
             {
-                test: /\.scss$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: isDev, // Hot Module Replacement
-                            reloadAll: true,
-                        },
-                    },
-                    'css-loader',
-                    'sass-loader'
-                ],
+                test: /\.s[ac]ss$/,
+                use: cssLoaders('sass-loader')
             },
             {
                 test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]', // If delete use img like hash
-                            outputPath: '/IMG'
-                        }
-                    }
-                ]
+                use: fileLoaders('IMG')
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'FONTS/'
-                        }
-                    }
-                ]
+                use: fileLoaders('FONTS')
             }
         ]
     }
