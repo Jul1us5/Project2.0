@@ -131,7 +131,17 @@ module.exports = {
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 use: fileLoaders('FONTS')
-            }
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/, // Dont include this
+                use: {
+                  loader: "babel-loader",
+                  options: {
+                    presets: ['@babel/preset-env'] // Presets HERE | Plugins set ( Bundle ) for JS
+                  }
+                }
+              }
         ]
     }
 }
