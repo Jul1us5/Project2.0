@@ -16,9 +16,9 @@ const filename = (dir,ext) => isDev ? `${dir}/[name].${ext}` : `${dir}/[name].[c
 // -----------------------------------
 const optimization = () => {
     const config = {
-        splitChunks: {
-            chunks: 'all'
-        }
+        // splitChunks: {
+        //     chunks: 'all'
+        // }
     }
     if(isProd) {
         config.minimizer = [
@@ -85,7 +85,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'), //     Location where we work
     mode: 'development',
     entry: {
-        main: './JS/index.js',     //   MAIN [name]
+        main: ['@babel/polyfill', './JS/index.js'],     //   MAIN [name]
         analytics: './JS/analytics.js' //   ANALYTICS [name]
     },
     output: {
@@ -138,8 +138,11 @@ module.exports = {
                 use: {
                   loader: "babel-loader",
                   options: {
-                    presets: ['@babel/preset-env'] // Presets HERE | Plugins set ( Bundle ) for JS
-                  }
+                    presets: ['@babel/preset-env'], // Presets HERE | Plugins set ( Bundle ) for JS
+                    plugins: [
+                        '@babel/plugin-proposal-class-properties' // This plugin know about all features
+                    ]
+                  },
                 }
               }
         ]
