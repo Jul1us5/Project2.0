@@ -12,6 +12,6 @@
   \*************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements:  */
-eval("function createAnalytics() {\n    let counter = 0;\n    let isDestroyed = false;\n\n    const listener = () => counter++;\n\n    document.addEventListener('click', listener);\n\n    return {\n        destroy() {\n            document.removeEventListener('click', listener);\n            isDestroyed = true;\n        },\n        getClick() {\n            if(isDestroyed) {\n                return 'Analytics is Destroyed!!!';\n            }\n            return counter;\n        }\n    }\n}\n\nwindow.analytics = createAnalytics();\n\n//# sourceURL=webpack:///./JS/analytics.js?");
+eval("function createAnalytics() {\n  var counter = 0;\n  var isDestroyed = false;\n\n  var listener = function listener() {\n    return counter++;\n  };\n\n  document.addEventListener('click', listener);\n  return {\n    destroy: function destroy() {\n      document.removeEventListener('click', listener);\n      isDestroyed = true;\n    },\n    getClick: function getClick() {\n      if (isDestroyed) {\n        return 'Analytics is Destroyed!!!';\n      }\n\n      return counter;\n    }\n  };\n}\n\nwindow.analytics = createAnalytics();\n\n//# sourceURL=webpack:///./JS/analytics.js?");
 /******/ })()
 ;

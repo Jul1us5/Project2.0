@@ -10,6 +10,46 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./JS/data.js":
+/*!********************!*\
+  !*** ./JS/data.js ***!
+  \********************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar data = {\n  title: 'WEBPACK BUNDLE.'\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (data);\n\n//# sourceURL=webpack:///./JS/data.js?");
+
+/***/ }),
+
+/***/ "./JS/index.js":
+/*!*********************!*\
+  !*** ./JS/index.js ***!
+  \*********************/
+/*! namespace exports */
+/*! exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ \"./JS/main.js\");\n// Here connect all Javascript files\n;\n\n//# sourceURL=webpack:///./JS/index.js?");
+
+/***/ }),
+
+/***/ "./JS/main.js":
+/*!********************!*\
+  !*** ./JS/main.js ***!
+  \********************/
+/*! namespace exports */
+/*! exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/data */ \"./JS/data.js\");\n/* harmony import */ var _CSS_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CSS/main.css */ \"./CSS/main.css\");\n/* harmony import */ var _CSS_color_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../CSS/color.scss */ \"./CSS/color.scss\");\n/* harmony import */ var _JSON_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../JSON/json */ \"./JSON/json.json\");\n;\n\n\n\nvar main = document.querySelector('.main');\nmain.insertAdjacentHTML('afterbegin', _data__WEBPACK_IMPORTED_MODULE_0__.default.title);\nconsole.log(_JSON_json__WEBPACK_IMPORTED_MODULE_3__.title);\n\n//# sourceURL=webpack:///./JS/main.js?");
+
+/***/ }),
+
 /***/ "./CSS/main.css":
 /*!**********************!*\
   !*** ./CSS/main.css ***!
@@ -33,46 +73,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./CSS/color.scss?");
-
-/***/ }),
-
-/***/ "./JS/data.js":
-/*!********************!*\
-  !*** ./JS/data.js ***!
-  \********************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst data = {\n    title: 'WEBPACK BUNDLE.'\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (data);\n\n//# sourceURL=webpack:///./JS/data.js?");
-
-/***/ }),
-
-/***/ "./JS/index.js":
-/*!*********************!*\
-  !*** ./JS/index.js ***!
-  \*********************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ \"./JS/main.js\");\n// Here connect all Javascript files\n;\n\n\n\n\n//# sourceURL=webpack:///./JS/index.js?");
-
-/***/ }),
-
-/***/ "./JS/main.js":
-/*!********************!*\
-  !*** ./JS/main.js ***!
-  \********************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/data */ \"./JS/data.js\");\n/* harmony import */ var _CSS_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CSS/main.css */ \"./CSS/main.css\");\n/* harmony import */ var _CSS_color_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../CSS/color.scss */ \"./CSS/color.scss\");\n/* harmony import */ var _JSON_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../JSON/json */ \"./JSON/json.json\");\n;\n\n\n\n\nconst main = document.querySelector('.main')\nmain.insertAdjacentHTML('afterbegin', _data__WEBPACK_IMPORTED_MODULE_0__.default.title);\n\nconsole.log(_JSON_json__WEBPACK_IMPORTED_MODULE_3__.title);\n\n//# sourceURL=webpack:///./JS/main.js?");
 
 /***/ }),
 
