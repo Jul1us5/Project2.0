@@ -1,8 +1,8 @@
-function createAnalytics() : object {
+function createAnalytics() {
     let counter = 0;
-    let isDestroyed: boolean = false;
+    let isDestroyed = false;
 
-    const listener = (): number => counter++;
+    const listener = () => counter++;
 
     document.addEventListener('click', listener);
 
@@ -20,4 +20,4 @@ function createAnalytics() : object {
     }
 }
 
-window['analytics'] = createAnalytics();
+window.analytics = createAnalytics();
