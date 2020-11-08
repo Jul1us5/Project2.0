@@ -114,7 +114,9 @@ const allPlugins = () => {
         })
     ].concat(MultiHtmlPlugins)
     if(isProd) {
-        base.push(new BundleAnalyzerPlugin())
+        base.push(new BundleAnalyzerPlugin({
+            analyzerPort: 4000,
+        }))
     }
 
     return base
@@ -139,7 +141,7 @@ module.exports = {
         }
     },
     optimization: optimization(),
-    // devtool: isDev ? 'source-map' : '',
+    devtool: isDev ? 'source-map' : 'inline-source-map',
     plugins: allPlugins(), //   Here set ALL HTML files as amended,
     module: {
         rules: [
@@ -169,7 +171,7 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                exclude: /node_modules/, // Dont include this
+                exclude: /node_modules/,
                 use: {
                   loader: "babel-loader",
                   options: babelOptions('@babel/preset-typescript')
@@ -177,7 +179,7 @@ module.exports = {
             },
             {
                 test: /\.jsx$/,
-                exclude: /node_modules/, // Dont include this
+                exclude: /node_modules/,
                 use: {
                   loader: "babel-loader",
                   options: babelOptions('@babel/preset-react')
