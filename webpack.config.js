@@ -36,8 +36,8 @@ const cssLoaders = extra => {
         {
             loader: MiniCssExtractPlugin.loader,
             options: {
-                hmr: isDev, // Hot Module Replacement
-                reloadAll: true,
+                // hmr: isDev, // Hot Module Replacement
+                // reloadAll: true,
                 publicPath: '../' // ADD -> for in .css links
             },
         },
